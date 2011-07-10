@@ -1,0 +1,8 @@
+AddHandler fcgid-script .fcgi .rb 
+DirectorySlash Off
+Options +FollowSymLinks +ExecCGI -Indexes
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
